@@ -1,69 +1,70 @@
 <html>
 
 <head>
-    <meta name="charset" content="utf-8">
-    <title>NovaLightshow</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="https://esm.sh/@wooorm/starry-night@1/style/both.css">
-    <script type="module">
-        import * as _ from './index.mjs';
-        window._ = _;
-        _.initLoad();
-    </script>
+  <meta name="charset" content="utf-8">
+  <title>NovaLightshow</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="https://esm.sh/@wooorm/starry-night@1/style/both.css">
+  <script type="module">
+    import * as _ from './index.mjs';
+    window._ = _;
+    _.initLoad();
+  </script>
 </head>
 
 <body>
 
-    <h1>NovaLightshow</h1>
-    
-    <p>Preview TextMate syntax highlighting grammars for use on GitHub.</p>
-    
-    <p><strong id="loading">Loading packages...</strong></p>
+  <h1>NovaLightshow</h1>
 
-    <form action="javascript:void(0)" onsubmit="_.run()">
-        <div class="flexed">
-            <div class="half">
-                <!-- Grammar -->
-                <h3>Grammar <small>(JSON/CSON/YAML/XML)</small></h3>
-                <select id="grammar-type" onchange="_.adjustTextareaSize()">
-                    <option value="url">From URL</option>
-                    <option value="text">From text</option>
-                </select>
-                <br>
-                <textarea id="grammar"></textarea>
-            </div>
-            <div class="half">
-                <!-- Sample -->
-                <h3>Sample content</h3>
-                <select id="sample-type" onchange="_.adjustTextareaSize()">
-                    <option value="url">From URL</option>
-                    <option value="text">From text</option>
-                </select>
-                <br>
-                <textarea id="sample"></textarea>
-            </div>
-        </div>
+  <p>Preview TextMate syntax highlighting grammars for use on GitHub.</p>
+
+  <p><strong id="loading">Loading packages...</strong></p>
+
+  <form action="javascript:void(0)" onsubmit="_.run()">
+    <div class="flexed">
+      <div class="half">
+        <!-- Grammar -->
+        <h3>Grammar <small>(JSON/CSON/YAML/XML)</small></h3>
+        <select id="grammar-type" onchange="_.adjustTextareaSize()">
+          <option value="url">From URL</option>
+          <option value="text">From text</option>
+        </select>
         <br>
-        <div class="options">
-            <div>
-                <label for="include-common">Include common grammars?</label>
-                <input type="checkbox" id="include-common" checked />
-            </div>
-        </div>
-        <button type="submit">Run</button>
-    </form>
-
-    <h2>Highlighted output</h2>
-    <output>
-    </output>
+        <textarea id="grammar"></textarea>
+        <textarea id="embedded-grammar"></textarea>
+      </div>
+      <div class="half">
+        <!-- Sample -->
+        <h3>Sample content</h3>
+        <select id="sample-type" onchange="_.adjustTextareaSize()">
+          <option value="url">From URL</option>
+          <option value="text">From text</option>
+        </select>
+        <br>
+        <textarea id="sample"></textarea>
+      </div>
+    </div>
     <br>
-    <button onclick="_.saveToUrl()">Share</button>
+    <div class="options">
+      <div>
+        <label for="include-common">Include common grammars?</label>
+        <input type="checkbox" id="include-common" checked />
+      </div>
+    </div>
+    <button type="submit">Run</button>
+  </form>
 
-    <footer>
-        Created by <a href="https://nixinova.com" target="_blank">Nixinova</a>
-        <br>
-        Code available on <a href="https://github.com/Nixinova/NovaLightshow" target="_blank">GitHub</a>
-    </footer>
+  <h2>Highlighted output</h2>
+  <output>
+  </output>
+  <br>
+  <button onclick="_.saveToUrl()">Share</button>
+
+  <footer>
+    Created by <a href="https://nixinova.com" target="_blank">Nixinova</a>
+    <br>
+    Code available on <a href="https://github.com/Nixinova/NovaLightshow" target="_blank">GitHub</a>
+  </footer>
 
 </body>
 
